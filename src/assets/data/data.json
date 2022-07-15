@@ -1,0 +1,21 @@
+{
+    "name": "Yesica Alfonsina Guido",
+    "certification": "Full Stack Developer Jr.",
+    "about": "I love collaborating and working as a team, I am looking for a full time position in web development, where I can apply my knowledge and skills to continue improving.",
+    "training": {
+        "certification": "Full Stack Developer Jr",
+        "start": "2021",
+        "end": "2022",
+        "name": "Argentina Programa- INTI"
+    },
+    "school":{
+        "title": "Licenciada en Turismo",
+        "start": "2008",
+        "end": "2012",
+        "name": "Universidad Nacional de Lanús"
+    },
+    "description": "Framework, service platform, programming models and languages used for the development of this web portfolio",
+    "email": "yesicaguidounla@hotmail.com",
+    "phone": "+54911 6914 9257",
+    "myPhrase": "Try, fail and try again. That is the path to success."    
+}
