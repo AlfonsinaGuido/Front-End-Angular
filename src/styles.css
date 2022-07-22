@@ -157,7 +157,7 @@ ion-icon:focus {
         min-width: 60px;
         max-width: 60px;
     }
-    .technologies-img {
+    .skills-img {
         max-width: 250px !important;
     }
     .portfolio-logo {
@@ -167,13 +167,13 @@ ion-icon:focus {
 }
 
 @media (min-width: 576px) and (max-width: 768px) { 
-    .technologies-img {
+    .skills-img {
         max-width: 500px !important;
     }
  }
 
 @media (min-width: 768px) { 
-    .technologies-img {
+    .skills-img {
         max-width: 700px !important;
     }
  }

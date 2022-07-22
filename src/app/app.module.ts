@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { IonicModule } from '@ionic/angular';
 import { HeaderComponent } from './components/header/header.component';
 import { AboutComponent } from './components/about/about.component';
-import { TechnologiesComponent } from './components/technologies/technologies.component';
+import { StudiesComponent } from './components/studies/studies.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -17,7 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     HeaderComponent,
     AboutComponent,
-    TechnologiesComponent,
+    StudiesComponent,
     PortfolioComponent,
     ContactComponent,
     FooterComponent
