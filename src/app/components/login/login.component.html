@@ -1,0 +1,41 @@
+<div class="d-flex justify-content-center">
+  <form class="m-5 col-md-6" #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+    <div class="mb-3 mt-3">
+      <img
+        src="{{ persona.logo }}"
+        class="logo-modal mx-auto d-block"
+        alt="logo"
+      />
+    </div>
+    <div class="mb-3 text-center">
+      <h1 style="text-shadow: none">Log in to activate editing</h1>
+    </div>
+    <div class="container-fluid">
+      <div class="mb-3">
+        <label for="nombreUsuario" class="form-label">Username</label>
+        <input
+          type="user" 
+          class="form-control"
+          id="nombreUsuario"
+          name="nombreUsuario"
+          [(ngModel)]="nombreUsuario" required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          [(ngModel)]="password" required
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    <div>
+      <p class="mb-0 text-center">Don't have an account? <a href ="#!" class="text-black-50 fw-bold">Sign Up</a>
+      </p>
+    </div> 
+  </form> 
+</div>
