@@ -1,0 +1,61 @@
+<section id="experience" class="divider">
+    <div class="container-fluid">
+        <div class="content-center">
+            <h2>Work Experience</h2>
+
+            <div class="p-0 bd-highlight">
+                <div class="d-flex justify-content-end">
+                  <div class="p-1 bd-highlight">
+                    <button type="button" id="" class="edit-buttons" routerLink="/nuevaexp" *ngIf="isLogged">
+                      <ion-icon
+                        style="background: none; border-radius: 0"
+                        name="add-outline"
+                      ></ion-icon>
+                    </button>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="d-flex justify-content-start" *ngFor="let Experiencia of expe">
+                <div class="p-1 bd-highlight">
+                  <div class="p-0 bd-highlight">
+                    <br>
+                    <img
+                      src="{{Experiencia.logoExp}}"
+                      class="logo-brand"
+                      alt="logo"
+                    />
+                  </div>
+                </div>
+                <div class="p-1 bd-highlight">
+                  <h3><b>{{Experiencia.nombreE}}</b></h3>
+                  <h4><time>{{Experiencia.periodoAniosExp}}</time></h4>
+                  <h3><i>{{Experiencia.descripcionE}}</i></h3>
+                </div>
+        
+                <div class="p-1 bd-highlight" *ngIf="isLogged">
+                  <div class="d-flex justify-content-end">
+                    <div class="p-1 bd-highlight">
+                      <button type="button" id="" class="edit-buttons" routerLink="/editexp/{{Experiencia.id}}">
+                        <ion-icon
+                          style="background: none; border-radius: 0"
+                          name="pencil-sharp"
+                        ></ion-icon>
+                      </button>
+                    </div>
+                    <div class="p-1 bd-highlight">
+                      <button type="button" id="" class="edit-buttons" (click)="delete(Experiencia.id)">
+                        <ion-icon
+                          style="background: none; border-radius: 0"
+                          name="trash-outline"
+                        ></ion-icon>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+</section>
+
