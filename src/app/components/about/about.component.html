@@ -1,18 +1,45 @@
 <section id="about" class="divider">
-    <div class="container-fluid">
-      <div class="content-center">
-        <h2>Who I am?</h2>
+  <div class="container-fluid">
+    <div class="content-center">
+      <h2>Who I am?</h2>
+      <div class="d-flex justify-content-end">
+        <div class="p-1 bd-highlight">
+          <button
+            type="button"
+            id=""
+            class="edit-buttons"
+            routerLink="/nuevoabout"
+            *ngIf="isLogged"
+          >
+            <ion-icon
+              style="background: none; border-radius: 0"
+              name="add-outline"
+            ></ion-icon>
+          </button>
+        </div>
+      </div>
+      <div *ngFor="let About of about">
         <div class="d-flex justify-content-end">
-          <div class="p-1 bd-highlight">
-            <button type="button" id="" class="edit-buttons">
+          <div class="p-1 bd-highlight" *ngIf="isLogged">
+            <button
+              type="button"
+              id=""
+              class="edit-buttons"
+              routerLink="/editabout/{{ About.id }}"
+            >
               <ion-icon
                 style="background: none; border-radius: 0"
                 name="pencil-sharp"
               ></ion-icon>
             </button>
           </div>
-          <div class="p-1 bd-highlight">
-            <button type="button" id="" class="edit-buttons">
+          <div class="p-1 bd-highlight" *ngIf="isLogged">
+            <button
+              type="button"
+              id=""
+              class="edit-buttons"
+              (click)="delete(About.id)"
+            >
               <ion-icon
                 style="background: none; border-radius: 0"
                 name="trash-outline"
@@ -20,7 +47,8 @@
             </button>
           </div>
         </div>
-        <p>{{ persona.acerca }}</p>
+        <p>{{ About.about }}</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>

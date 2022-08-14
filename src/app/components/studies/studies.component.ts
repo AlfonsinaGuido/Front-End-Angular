@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Educacion } from 'src/app/model/educacion';
-import { persona } from 'src/app/model/persona.model';
 import { EducacionService } from 'src/app/services/educacion.service';
-import { PersonaService } from 'src/app/services/persona.service';
 import { TokenService } from 'src/app/services/token.service';
 
 @Component({
@@ -13,10 +11,8 @@ import { TokenService } from 'src/app/services/token.service';
 export class StudiesComponent implements OnInit {
   
   educacion: Educacion[] = [];
-
-  persona: persona = new persona("","","","","","","","","","","","");
   
-  constructor(private educacionS: EducacionService, private tokenService: TokenService, public personaService: PersonaService) { }
+  constructor(private educacionS: EducacionService, private tokenService: TokenService) { }
 
   isLogged = false;
 
@@ -25,13 +21,6 @@ export class StudiesComponent implements OnInit {
     if(this.tokenService.getToken()){
       this.isLogged = true;
     } else {
-      this.isLogged = false;
-    }
-    this.personaService.getPersona().subscribe(data => {
-      this.persona = data})
-    if(this.tokenService.getToken()){
-      this.isLogged=true;
-    }else{
       this.isLogged = false;
     }
   }
@@ -44,15 +33,19 @@ export class StudiesComponent implements OnInit {
     )
   }
 
-  delete(id?: number){
-    if( id != undefined){
-      this.educacionS.delete(id).subscribe(
-        data => {
-          this.cargarEducacion();
-        }, err => {
-          alert("No se pudo eliminar");
-        }
-      )
+  delete(id?: number) {
+    if (confirm("Desea eliminar?") == true) {
+      if (id != undefined) {
+        this.educacionS.delete(id).subscribe(
+          data => {
+            this.cargarEducacion();
+          }, err => {
+            alert("No se pudo eliminar")
+          }
+        )
+      }
+    } else {
+      alert("cancelado")
     }
   }
 

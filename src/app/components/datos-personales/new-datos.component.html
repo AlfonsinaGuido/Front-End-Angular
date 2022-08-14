@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div class="content-center">
+        <div class="p-5">
+            <div>
+                <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                    <div class="form-group">
+                        <label for="nombreCompleto"><b>Nombre y apellido</b></label>
+                        <input type="text" class="form-control" id="nombreCompleto" name="nombreCompleto" [(ngModel)]="nombreCompleto" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="imgPerfil"><b>URL de la imagen de perfil (opcional)</b></label>
+                        <input type="text" class="form-control" id="imgPerfil" name="imgPerfil" [(ngModel)]="imgPerfil">
+                    </div>
+                    <div class="form-group">
+                        <label for="profesion"><b>Profesión</b></label>
+                        <input type="text" class="form-control" id="profesion" name="profesion" [(ngModel)]="profesion" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ubicacion"><b>Ubicación</b></label>
+                        <input type="text" class="form-control" id="ubicacion" name="ubicacion" [(ngModel)]="ubicacion" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cv"><b>URL del archivo CV</b></label>
+                        <input type="text" class="form-control" id="cv" name="cv" [(ngModel)]="cv" required>
+                    </div>
+                    <button class="btn btn-success">
+                        Agregar Datos
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</div>

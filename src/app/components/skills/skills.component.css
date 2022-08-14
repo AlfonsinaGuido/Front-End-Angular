@@ -1,0 +1,8 @@
+h2 { font-size: 30px; line-height: normal; }
+
+.width {min-width: 45%;}
+
+@media (max-width: 576px) { 
+    h2 { font-size: 25px; line-height: normal; }
+    h3 { font-size: 18px; line-height: normal; }
+}

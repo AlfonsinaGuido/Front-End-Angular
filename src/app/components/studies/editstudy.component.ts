@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Educacion } from 'src/app/model/educacion';
 import { EducacionService } from 'src/app/services/educacion.service';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-editstudy',
@@ -14,11 +15,18 @@ export class EditstudyComponent implements OnInit {
   constructor(
     private educacionS: EducacionService,
     private activatedRouter : ActivatedRoute,
-    private router: Router
+    private router: Router, private tokenService: TokenService
   ) { }
-
+  isLogged = false;
   ngOnInit(): void {
     const id = this.activatedRouter.snapshot.params['id'];
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+    if (this.isLogged) {
+
     this.educacionS.detail(id).subscribe(
       data =>{
         this.educacion = data;
@@ -27,6 +35,11 @@ export class EditstudyComponent implements OnInit {
          this.router.navigate(['']);
       }
     )
+  } else {
+    alert("No autorizado")
+    this.router.navigate(['portfolioweb']);
+
+  }
   }
 
   onUpdate(): void{

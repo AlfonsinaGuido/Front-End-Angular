@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div class="content-center">
+        <div class="p-5">
+            <div>
+                <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                    <div class="form-group">
+                        <label for="nombreProy"><b>Nombre del Proyecto</b></label>
+                        <input type="text" class="form-control" id="nombreProy" name="nombreProy" [(ngModel)]="nombreProy" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="descProy"><b>Breve Descripción (opcional)</b></label>
+                        <input type="text" class="form-control" id="descProy" name="descProy" [(ngModel)]="descProy">
+                    </div>
+                    <div class="form-group">
+                        <label for="webProy"><b>URL del Proyecto</b></label>
+                        <input type="text" class="form-control" id="webProy" name="webProy" [(ngModel)]="webProy" required>
+                    </div>
+                    <button class="btn btn-success">
+                        Agregar Proyecto
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</div>

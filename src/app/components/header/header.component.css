@@ -5,34 +5,10 @@
     font-size: 25px; 
     font-weight: 600;
 }
+    
 
 .nav-link{ color: #ac0d0d;}
 .nav-link:hover{ color: #eb3a1b;}
 
 .navbar-toggler { font-size: 40px; }
 /* .navbar-toggler:focus { outline: none; } */
-
-#home {
-    background-size: cover;
-    padding-top: 180px;
-    min-height: 800px;
-    color: #ffffff;
-}
-
-
-#home-p {
-    font-size: 30px;
-    color: #ffffff;
-    text-shadow: 2px 2px 2px black;
-    font-weight: 600
-}
-
-#home-img {
-    max-width: 200px;
-    margin: 50px 0;
-}
-
-h1 {font-size: 35px; line-height: 50px; text-shadow: black 1px 0 10px;}
-@media (max-width: 576px) { 
-    #home-img { 
-    max-width: 200px; }}

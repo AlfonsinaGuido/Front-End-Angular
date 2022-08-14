@@ -1,0 +1,87 @@
+<section id="skills" class="divider">
+  <div class="container-fluid">
+    <div class="content-center width">
+      <h2>Soft & Hard skills</h2>
+      <div class="container">
+        <div class="mt-4 mb-4 bd-highlight">
+          <div class="d-flex justify-content-end">
+            <div class="p-1 bd-highlight">
+              <button
+                type="button"
+                id=""
+                class="edit-buttons"
+                routerLink="/nuevaskill"
+                *ngIf="isLogged"
+              >
+                <ion-icon
+                  style="background: none; border-radius: 0"
+                  name="add-outline"
+                ></ion-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="list-inline">
+        <li class="list-inline-item" *ngFor="let Skills of skills">
+          <div class="container">
+            <div class="d-flex justify-content-end me-3">
+              <div class="p-1 bd-highlight">
+                <button
+                  type="button"
+                  id=""
+                  class="edit-buttons"
+                  routerLink="/editskill/{{ Skills.id }}"
+                  *ngIf="isLogged"
+                >
+                  <ion-icon
+                    style="background: none; border-radius: 0"
+                    name="pencil-sharp"
+                  ></ion-icon>
+                </button>
+              </div>
+              <div class="p-1 bd-highlight ">
+                <button
+                  type="button"
+                  id=""
+                  class="edit-buttons"
+                  (click)="delete(Skills.id)"
+                  *ngIf="isLogged"
+                >
+                  <ion-icon
+                    style="background: none; border-radius: 0"
+                    name="trash-outline"
+                  ></ion-icon>
+                </button>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center">
+              
+              <div>
+                  <h3>{{ Skills.nameSkill }}</h3>
+                  <circle-progress
+                    [percent]="Skills.progress"
+                    [radius]="110"
+                    [imageSrc]="Skills.imgSkill"
+                    [showImage]="true"
+                    [imageHeight]="90"
+                    [imageWidth]="90"
+                    [showUnits]="false"
+                    [showSubtitle]="false"
+                    [outerStrokeWidth]="16"
+                    [innerStrokeWidth]="2"
+                    [outerStrokeColor]="'#28da87'"
+                    [innerStrokeColor]="'#C7E596'"
+                    [animation]="true"
+                    [animationDuration]="600"
+                  ></circle-progress>
+              
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      
+    </div>
+  </div>
+</section>

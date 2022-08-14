@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { persona } from 'src/app/model/persona.model';
-import { PersonaService } from 'src/app/services/persona.service';
+import { About } from 'src/app/model/about';
+import { AboutService } from 'src/app/services/about.service';
 import { TokenService } from 'src/app/services/token.service';
 
 @Component({
@@ -9,20 +9,42 @@ import { TokenService } from 'src/app/services/token.service';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-  isLogged = false;
-    
-  persona: persona = new persona("","","","","","","","","","","","");
-  
-  constructor(public personaService: PersonaService, private tokenService: TokenService) { }
-  
+  about: About[] = []; 
+
+ 
+
+constructor(private aboutServ: AboutService, private tokenService: TokenService){ }
+isLogged = false;
+
   ngOnInit(): void {
-    this.personaService.getPersona().subscribe(data => {
-      this.persona = data})
+
+    this.cargarAbout();
+
     if(this.tokenService.getToken()){
-      this.isLogged=true;
-    }else{
+      this.isLogged= true;
+    } else {
       this.isLogged = false;
     }
-  }
 
+    
+  };
+  cargarAbout():void{
+    this.aboutServ.lista().subscribe(
+      data => {this.about=data;})
+  }
+  delete(id?: number) {
+    if (confirm("Desea eliminar?") == true) {
+      if (id != undefined) {
+        this.aboutServ.delete(id).subscribe(
+          data => {
+            this.cargarAbout();
+          }, err => {
+            alert("No se pudo eliminar")
+          }
+        )
+      }
+    } else {
+      alert("cancelado")
+    }
+  }
 }
