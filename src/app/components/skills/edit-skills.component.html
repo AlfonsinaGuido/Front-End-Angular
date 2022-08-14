@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div class="content-center">
+        <div class="p-5">
+            <div>
+                <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                    <div class="form-group">
+                        <label for="nameSkill"><b>Nombre Skill</b></label>
+                        <input type="text" class="form-control" id="nameSkill" name="nameSkill" [(ngModel)]="skills.nameSkill" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="progress"><b>Progreso</b></label>
+                        <input type="number" class="form-control" id="progress" name="progress" [(ngModel)]="skills.progress" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="imgSkill"><b>URL de la imagen de la skill (opcional)</b></label>
+                        <input type="text" class="form-control" id="imgSkill" name="imgSkill" [(ngModel)]="skills.imgSkill">
+                    </div>
+                    <button class="btn btn-success">
+                        Editar skills
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</div>

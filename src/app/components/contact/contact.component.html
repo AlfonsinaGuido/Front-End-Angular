@@ -12,7 +12,7 @@
           </p>
           <div class="d-flex justify-content-end mx-1">
             <div class="p-1 bd-highlight">
-              <button type="button" id="" class="edit-buttons">
+              <button type="button" id="" class="edit-buttons" routerLink="/nuevocontacto" *ngIf="isLogged">
                 <ion-icon
                   style="background: none; border-radius: 0"
                   name="add-outline"
@@ -20,76 +20,85 @@
               </button>
             </div>
           </div>
-          <div class="p-1 bd-highlight">
-            <div class="d-flex justify-content-end">
-              <div class="p-1 bd-highlight">
-                <button type="button" id="" class="edit-buttons">
-                  <ion-icon
-                    style="background: none; border-radius: 0"
-                    name="pencil-sharp"
-                  ></ion-icon>
-                </button>
+          <div *ngFor="let Contacto of contacto">
+            <div class="p-1 bd-highlight">
+              <div class="d-flex justify-content-end">
+                <div class="p-1 bd-highlight" *ngIf="isLogged">
+                  <button type="button" id="" class="edit-buttons" routerLink="/editcontacto/{{ Contacto.id }}">
+                    <ion-icon
+                      style="background: none; border-radius: 0"
+                      name="pencil-sharp"
+                    ></ion-icon>
+                  </button>
+                </div>
+                <div class="p-1 bd-highlight" *ngIf="isLogged">
+                  <button type="button" id="" class="edit-buttons" (click)="delete(Contacto.id)">
+                    <ion-icon
+                      style="background: none; border-radius: 0"
+                      name="trash-outline"
+                    ></ion-icon>
+                  </button>
+                </div>
               </div>
-              <div class="p-1 bd-highlight">
-                <button type="button" id="" class="edit-buttons">
-                  <ion-icon
-                    style="background: none; border-radius: 0"
-                    name="trash-outline"
-                  ></ion-icon>
-                </button>
+            </div>
+            <div class="p-1 bd-highlight">
+              <div class="d-flex justify-content-start">
+                <div class="p-1 bd-highlight d-none d-sm-block">
+                  <p>
+                    <ion-icon
+                      name="mail-outline"
+                      style="
+                        color: rgb(25, 62, 228);
+                        font-size: 25px;
+                        cursor: auto;
+                        background: none;
+                        border-radius: 0;
+                      "
+                    >
+                    </ion-icon>
+                  </p>
+                </div>
+                <div class="p-0 bd-highlight">
+                  <p>{{ Contacto.email }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-1 bd-highlight">
+              <div class="d-flex justify-content-start">
+                <div class="p-1 bd-highlight">
+                  <p>
+                    <ion-icon
+                      name="logo-whatsapp"
+                      style="
+                        color: rgb(119, 233, 25);
+                        font-size: 25px;
+                        cursor: auto;
+                        background: none;
+                        border-radius: 0;
+                      "
+                    >
+                    </ion-icon>
+                  </p>
+                </div>
+                <div class="p-0 bd-highlight">
+                  <p>{{ Contacto.telefono }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-1 bd-highlight">
+              <div class="d-flex justify-content-start">
+                <div class="p-1 bd-highlight">
+                </div>
+                <div class="p-0 bd-highlight">
+                  <p>{{ Contacto.otroMedio }}</p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="p-1 bd-highlight">
-            <div class="d-flex justify-content-start">
-              <div class="p-1 bd-highlight d-none d-sm-block">
-                <p>
-                  <ion-icon
-                    name="mail-outline"
-                    style="
-                      color: rgb(25, 62, 228);
-                      font-size: 25px;
-                      cursor: auto;
-                      background: none;
-                      border-radius: 0;
-                    "
-                  >
-                  </ion-icon>
-                </p>
-              </div>
-              <div class="p-0 bd-highlight">
-                <p>{{ persona.email }}</p>
-              </div>
-            </div>
-          </div>
-          <div class="p-1 bd-highlight">
-            <div class="d-flex justify-content-start">
-              <div class="p-1 bd-highlight">
-                <p>
-                  <ion-icon
-                    name="logo-whatsapp"
-                    style="
-                      color: rgb(119, 233, 25);
-                      font-size: 25px;
-                      cursor: auto;
-                      background: none;
-                      border-radius: 0;
-                    "
-                  >
-                  </ion-icon>
-                </p>
-              </div>
-              <div class="p-0 bd-highlight">
-                <p>{{ persona.telefono }}</p>
-              </div>
-            </div>
-          </div>
+          
         </div>
         <div class="col-md-6 topmargin-sm">
-          <form
-            action="https://formsubmit.co/yesicaguidounla@hotmail.com"
-            method="POST"
-          >
+          <form action="https://formsubmit.co/yesicaguidounla@hotmail.com" method="POST" target="_blank">
             <div class="col-md-12">
               <div class="form-group">
                 <input
@@ -174,4 +183,5 @@
         </div>
       </div>
     </div>
+    
   </section>

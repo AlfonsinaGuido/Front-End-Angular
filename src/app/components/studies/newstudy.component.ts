@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Educacion } from 'src/app/model/educacion';
 import { EducacionService } from 'src/app/services/educacion.service';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-newstudy',
@@ -14,9 +15,23 @@ export class NewstudyComponent implements OnInit {
   logoE: string;
   periodoAniosE: string;
 
-  constructor(private educacionS: EducacionService, private router: Router) { }
-
+  constructor(private educacionS: EducacionService, private router: Router, private activatedRouter: ActivatedRoute, private tokenService: TokenService) { }
+  isLogged = false;
   ngOnInit(): void {
+    const id = this.activatedRouter.snapshot.params['id'];
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+    if (this.isLogged) {
+
+
+  } else {
+    alert("No autorizado")
+    this.router.navigate(['portfolioweb']);
+
+  }
   }
 
   onCreate(): void{

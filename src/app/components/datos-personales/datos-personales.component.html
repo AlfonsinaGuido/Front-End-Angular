@@ -1,0 +1,78 @@
+<section
+  id="home"
+  class="divider"
+  style="background-image: url('../../assets/images/hero.jpeg')"
+>
+<div class="container">
+  <div class="p-0 bd-highlight">
+    <div class="d-flex justify-content-end">
+      <div class="p-1 bd-highlight">
+        <button
+          type="button"
+          id=""
+          class="edit-buttons"
+          routerLink="/nuevosdatos"
+          *ngIf="isLogged"
+        >
+          <ion-icon
+            style="background: none; border-radius: 0"
+            name="add-outline"
+          ></ion-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="container" *ngFor="let DatosPersonales of datos">
+    <div class="d-flex justify-content-end">
+      <div class="p-1 bd-highlight">
+        <button
+          type="button"
+          id=""
+          class="edit-buttons"
+          routerLink="/editdatos/{{ DatosPersonales.id }}"
+          *ngIf="isLogged"
+        >
+          <ion-icon
+            style="background: none; border-radius: 0"
+            name="pencil-sharp"
+          ></ion-icon>
+        </button>
+      </div>
+      <div class="p-1 bd-highlight">
+        <button
+          type="button"
+          id=""
+          class="edit-buttons"
+          (click)="delete(DatosPersonales.id)"
+          *ngIf="isLogged"
+        >
+          <ion-icon
+            style="background: none; border-radius: 0"
+            name="trash-outline"
+          ></ion-icon>
+        </button>
+      </div>
+    </div>
+    <div class="content-center">
+      <h1>I am {{ DatosPersonales.nombreCompleto }}</h1>
+      <img
+        id="home-img"
+        src="{{ DatosPersonales.imgPerfil }}"
+        alt="Foto perfil"
+      />
+      <p id="home-p">{{ DatosPersonales.profesion }}</p>
+      <p id="home-p">{{ DatosPersonales.ubicacion }}</p>
+      <a
+        download="CV"
+        href="{{ DatosPersonales.cv }}"
+        class="btn btn-light topmargin-sm"
+        >Download CV
+        <ion-icon
+          name="archive-outline"
+          style="margin: auto 5px; font-size: 25px; color: #1a1a1a"
+        ></ion-icon
+      ></a>
+    </div>
+  </div>
+</section>

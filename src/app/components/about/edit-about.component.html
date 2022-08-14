@@ -1,0 +1,18 @@
+<div class="container-fluid" *ngIf="about">
+    <div class="content-center">
+        <div class="p-5">
+            <div>
+                <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                    <div class="form-group">
+                        <label for="about"><h1><b>Breve descripción acerca de sí mismo</b></h1></label>
+                        <textarea cols="50" rows="5" type="text" class="form-control" id="about" name="about" [(ngModel)]="about.about" required></textarea>
+                    </div>
+                    <button class="btn btn-success">
+                        Modificar descripción
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</div>

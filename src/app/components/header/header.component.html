@@ -29,12 +29,17 @@
         </li>
         <li class="nav-item" style="padding: 0px 20px">
           <a class="nav-link" href="studies" aria-current="page"
-            >Education and Skills</a
+            >Education</a
           >
         </li>
         <li class="nav-item" style="padding: 0px 20px">
-          <a class="nav-link" href="portfolio" aria-current="page"
-            >Portfolio</a
+          <a class="nav-link" href="skills" aria-current="page"
+            >Skills</a
+          >
+        </li>
+        <li class="nav-item" style="padding: 0px 20px">
+          <a class="nav-link" href="projects" aria-current="page"
+            >Projects</a
           >
         </li>
         <li class="nav-item" style="padding: 0px 20px">
@@ -50,42 +55,3 @@
     </div>
   </div>
 </nav>
-
-<section id="home" class="divider" style="background-image: url('{{ persona.imgFondo }}')">
-  <div class="container">
-    <div class="d-flex justify-content-end">
-      <div class="p-1 bd-highlight">
-        <button type="button" id="" class="edit-buttons">
-          <ion-icon
-            style="background: none; border-radius: 0"
-            name="pencil-sharp"
-          ></ion-icon>
-        </button>
-      </div>
-    </div>
-    <div class="content-center">
-      <h1>I am {{ persona.nombre }} {{ persona.apellido }}</h1>
-      <img id="home-img" src="{{ persona.img }}"
-      alt="Foto perfil"/>
-      <div class="d-flex justify-content-end">
-        <div class="p-1 bd-highlight">
-          <button type="button" id="" class="edit-buttons">
-            <ion-icon
-              style="background: none; border-radius: 0"
-              name="pencil-sharp"
-            ></ion-icon>
-          </button>
-        </div>
-      </div>
-      <p id="home-p">{{ persona.profesion }}</p>
-      <br />
-      <a download="CV" href="{{ persona.cv }}" class="btn btn-light topmargin-sm"
-        >Download CV (Spanish)
-        <ion-icon
-          name="archive-outline"
-          style="margin: auto 5px; font-size: 25px; color: #1a1a1a"
-        ></ion-icon
-      ></a>
-    </div>
-  </div>
-</section>
