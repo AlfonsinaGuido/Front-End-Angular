@@ -5,7 +5,7 @@
         <div class="p-0 bd-highlight">
           <div class="d-flex justify-content-end">
             <div class="p-1 bd-highlight">
-              <button type="button" id="" class="edit-buttons" routerLink="/nuevaedu" *ngIf="isLogged">
+              <button type="button" class="edit-buttons" routerLink="/nuevaedu" *ngIf="isLogged">
                 <ion-icon
                   style="background: none; border-radius: 0"
                   name="add-outline"
@@ -35,7 +35,7 @@
           <div class="p-1 bd-highlight" *ngIf="isLogged">
             <div class="d-flex justify-content-end">
               <div class="p-1 bd-highlight">
-                <button type="button" id="" class="edit-buttons" routerLink="/editedu/{{Educacion.id}}">
+                <button type="button" class="edit-buttons" routerLink="/editedu/{{Educacion.id}}">
                   <ion-icon
                     style="background: none; border-radius: 0"
                     name="pencil-sharp"
@@ -43,7 +43,7 @@
                 </button>
               </div>
               <div class="p-1 bd-highlight">
-                <button type="button" id="" class="edit-buttons" (click)="delete(Educacion.id)">
+                <button type="button" class="edit-buttons" (click)="delete(Educacion.id)">
                   <ion-icon
                     style="background: none; border-radius: 0"
                     name="trash-outline"

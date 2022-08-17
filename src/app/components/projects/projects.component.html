@@ -7,7 +7,6 @@
           <div class="p-1 bd-highlight">
             <button
               type="button"
-              id=""
               class="edit-buttons"
               routerLink="/nuevoproyecto"
             >
@@ -28,7 +27,6 @@
               <div class="p-1 bd-highlight" *ngIf="isLogged">
                 <button
                   type="button"
-                  id=""
                   class="edit-buttons"
                   routerLink="/editproyecto/{{ Proyectos.id }}"
                 >
@@ -41,7 +39,6 @@
               <div class="p-1 bd-highlight" *ngIf="isLogged">
                 <button
                   type="button"
-                  id=""
                   class="edit-buttons"
                   (click)="delete(Proyectos.id)"
                 >

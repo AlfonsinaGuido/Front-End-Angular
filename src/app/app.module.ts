@@ -32,6 +32,8 @@ import { EditContactComponent } from './components/contact/edit-contact.componen
 import { NewContactComponent } from './components/contact/new-contact.component';
 import { NewProjectComponent } from './components/projects/new-project.component';
 import { EditProjectComponent } from './components/projects/edit-project.component';
+import { GratitudeComponent } from './components/gratitude/gratitude.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +63,8 @@ import { EditProjectComponent } from './components/projects/edit-project.compone
     NewContactComponent,
     NewProjectComponent,
     EditProjectComponent,
+    GratitudeComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

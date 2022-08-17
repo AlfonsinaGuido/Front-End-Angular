@@ -14,6 +14,7 @@ export class DatosPersonalesComponent implements OnInit {
   constructor(private DatosPersonales: DatosPersonalesService, private tokenService: TokenService) { }
 
   isLogged = false;
+  
 
   ngOnInit(): void {
     this.cargarDatosPersonales();
@@ -22,10 +23,12 @@ export class DatosPersonalesComponent implements OnInit {
     } else {
       this.isLogged = false;
     }
+    
   }
 
   cargarDatosPersonales(): void {
-    this.DatosPersonales.lista().subscribe(data => { this.datos = data; })
+    this.DatosPersonales.lista().subscribe(data => { this.datos = data });
+  
   }
 
   delete(id?: number) {

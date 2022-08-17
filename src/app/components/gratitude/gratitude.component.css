@@ -1,0 +1,5 @@
+h1 { font-size: 50px}
+img { width: 30% }
+@media (max-width: 576px) { 
+    h1 { font-size: 25px; line-height: normal; }
+}

@@ -22,6 +22,8 @@ import { EditContactComponent } from './components/contact/edit-contact.componen
 import { NewContactComponent } from './components/contact/new-contact.component';
 import { EditProjectComponent } from './components/projects/edit-project.component';
 import { NewProjectComponent } from './components/projects/new-project.component';
+import { GratitudeComponent } from './components/gratitude/gratitude.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [
   {path:'portfolioweb', component:PortfoliowebComponent},
@@ -47,7 +49,10 @@ const routes: Routes = [
   { path: 'nuevocontacto', component:NewContactComponent },
   { path: 'editcontacto/:id', component:EditContactComponent },
   { path: 'nuevoproyecto', component:NewProjectComponent },
-  { path: 'editproyecto/:id', component:EditProjectComponent }
+  { path: 'editproyecto/:id', component:EditProjectComponent },
+  { path: 'messageSent', component:GratitudeComponent },
+  { path: 'page404', component: NotFoundComponent },
+  { path: '**', redirectTo: 'page404'}
 
 ];
 
