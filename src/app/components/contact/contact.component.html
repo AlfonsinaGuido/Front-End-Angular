@@ -12,7 +12,7 @@
           </p>
           <div class="d-flex justify-content-end mx-1">
             <div class="p-1 bd-highlight">
-              <button type="button" id="" class="edit-buttons" routerLink="/nuevocontacto" *ngIf="isLogged">
+              <button type="button" class="edit-buttons" routerLink="/nuevocontacto" *ngIf="isLogged && contacto.length == 0">
                 <ion-icon
                   style="background: none; border-radius: 0"
                   name="add-outline"
@@ -24,7 +24,7 @@
             <div class="p-1 bd-highlight">
               <div class="d-flex justify-content-end">
                 <div class="p-1 bd-highlight" *ngIf="isLogged">
-                  <button type="button" id="" class="edit-buttons" routerLink="/editcontacto/{{ Contacto.id }}">
+                  <button type="button" class="edit-buttons" routerLink="/editcontacto/{{ Contacto.id }}">
                     <ion-icon
                       style="background: none; border-radius: 0"
                       name="pencil-sharp"
@@ -32,7 +32,7 @@
                   </button>
                 </div>
                 <div class="p-1 bd-highlight" *ngIf="isLogged">
-                  <button type="button" id="" class="edit-buttons" (click)="delete(Contacto.id)">
+                  <button type="button" class="edit-buttons" (click)="delete(Contacto.id)">
                     <ion-icon
                       style="background: none; border-radius: 0"
                       name="trash-outline"
@@ -98,14 +98,13 @@
           
         </div>
         <div class="col-md-6 topmargin-sm">
-          <form action="https://formsubmit.co/yesicaguidounla@hotmail.com" method="POST" target="_blank">
+          <form ngNoForm action="https://formsubmit.co/yesicaguidounla@hotmail.com" method="POST">
             <div class="col-md-12">
               <div class="form-group">
                 <input
                   type="text"
                   class="form-control"
                   name="name"
-                  id=""
                   placeholder="Name"
                   required
                 />
@@ -117,7 +116,6 @@
                   type="text"
                   class="form-control"
                   name="lastname"
-                  id=""
                   placeholder="Last name"
                   required
                 />
@@ -129,7 +127,6 @@
                   type="email"
                   class="form-control"
                   name="email"
-                  id=""
                   placeholder="Email"
                   required
                 />
@@ -141,7 +138,6 @@
                   type="text"
                   class="form-control"
                   name="companyname"
-                  id=""
                   placeholder="Company name"
                   required
                 />
@@ -150,10 +146,9 @@
             <div class="col-md-12">
               <div class="form-group">
                 <input
-                  type="number"
+                  type="text"
                   class="form-control"
                   name="phone"
-                  id=""
                   placeholder="Phone number (optional)"
                 />
               </div>
@@ -163,7 +158,6 @@
                 <textarea
                   class="form-control"
                   name="message"
-                  id=""
                   placeholder="Write your message"
                   rows="3"
                   required
@@ -171,7 +165,15 @@
               </div>
             </div>
             <div class="col-md-12">
-              <button type="submit" id="" class="btn btn-dark full-width">
+              <input type="hidden" name="_captcha" value="false" />
+              <input
+                type="hidden"
+                name="_next"
+                value="http://localhost:4200/messageSent"
+              />
+            </div>
+            <div class="col-md-12">
+              <button type="submit" class="btn btn-dark full-width">
                 Send
                 <ion-icon
                   style="background: none; border-radius: 0"
@@ -184,4 +186,4 @@
       </div>
     </div>
     
-  </section>
+</section>

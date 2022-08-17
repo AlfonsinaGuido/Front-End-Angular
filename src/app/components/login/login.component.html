@@ -10,7 +10,7 @@
     <div class="mb-3 text-center">
       <h1 style="text-shadow: none">Log in to activate editing</h1>
     </div>
-    <div class="container-fluid">
+    <div class="container fluid row">
       <div class="mb-3">
         <label for="nombreUsuario" class="form-label">Username</label>
         <input
@@ -31,11 +31,14 @@
           [(ngModel)]="password" required
         />
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+      
     </div>
+    <!-- Quiero agregar la posibilidad de que el usuario pueda registrarse, pero no llego a completarlo a tiempo. Lo dejo pendiente para después de la entrega.
     <div>
       <p class="mb-0 text-center">Don't have an account? <a href ="#!" class="text-black-50 fw-bold">Sign Up</a>
-      </p>
-    </div> 
+    </div> -->
   </form> 
 </div>

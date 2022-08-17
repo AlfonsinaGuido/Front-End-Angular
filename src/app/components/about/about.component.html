@@ -6,10 +6,9 @@
         <div class="p-1 bd-highlight">
           <button
             type="button"
-            id=""
             class="edit-buttons"
             routerLink="/nuevoabout"
-            *ngIf="isLogged"
+            *ngIf="isLogged && about.length == 0"
           >
             <ion-icon
               style="background: none; border-radius: 0"
@@ -23,7 +22,6 @@
           <div class="p-1 bd-highlight" *ngIf="isLogged">
             <button
               type="button"
-              id=""
               class="edit-buttons"
               routerLink="/editabout/{{ About.id }}"
             >
@@ -36,7 +34,6 @@
           <div class="p-1 bd-highlight" *ngIf="isLogged">
             <button
               type="button"
-              id=""
               class="edit-buttons"
               (click)="delete(About.id)"
             >
