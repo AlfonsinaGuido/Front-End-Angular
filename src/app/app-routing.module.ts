@@ -1,19 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutComponent } from './components/about/about.component';
-import { ExperienceComponent } from './components/experience/experience.component';
-import { ContactComponent } from './components/contact/contact.component';
 import { LoginComponent } from './components/login/login.component';
-import { ProjectsComponent } from './components/projects/projects.component';
 import { PortfoliowebComponent } from './components/portfolioweb/portfolioweb.component';
-import { StudiesComponent } from './components/studies/studies.component';
 import { NewExperienceComponent } from './components/experience/new-experience.component';
 import { EditExperienciaComponent } from './components/experience/edit-experiencia.component';
 import { NewstudyComponent } from './components/studies/newstudy.component';
 import { EditstudyComponent } from './components/studies/editstudy.component';
 import { NewDatosComponent } from './components/datos-personales/new-datos.component';
 import { EditDatosComponent } from './components/datos-personales/edit-datos.component';
-import { SkillsComponent } from './components/skills/skills.component';
 import { NewSkillsComponent } from './components/skills/new-skills.component';
 import { EditSkillsComponent } from './components/skills/edit-skills.component';
 import { NewAboutComponent } from './components/about/new-about.component';
@@ -26,15 +20,7 @@ import { GratitudeComponent } from './components/gratitude/gratitude.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [
-  {path:'portfolioweb', component:PortfoliowebComponent},
   {path:'login', component: LoginComponent},
-  {path:'home', component: PortfoliowebComponent},
-  {path:'about', component: AboutComponent},
-  {path:'experience', component: ExperienceComponent},
-  {path:'studies', component: StudiesComponent},
-  {path:'skills', component: SkillsComponent},
-  {path:'projects', component: ProjectsComponent},
-  {path:'contact', component: ContactComponent},
   {path:'', component: PortfoliowebComponent},
   {path:'nuevaexp', component: NewExperienceComponent},
   {path: 'editexp/:id', component: EditExperienciaComponent},
