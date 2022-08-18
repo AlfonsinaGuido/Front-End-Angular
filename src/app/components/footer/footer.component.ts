@@ -13,7 +13,7 @@ export class FooterComponent implements OnInit {
   
   isLogged = false;
     
-  persona: persona = new persona("","","","","","","","","","","","");
+  persona: persona = new persona("","","","");
   
   constructor(public personaService: PersonaService, private tokenService: TokenService) { }
   
