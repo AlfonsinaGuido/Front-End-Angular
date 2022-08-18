@@ -1,6 +1,6 @@
 h2 { font-size: 30px; line-height: normal; }
 
-.width {min-width: 45%;}
+.width {min-width: 55%;}
 
 @media (max-width: 576px) { 
     h2 { font-size: 25px; line-height: normal; }

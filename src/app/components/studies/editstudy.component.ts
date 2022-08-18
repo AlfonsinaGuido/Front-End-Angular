@@ -37,7 +37,7 @@ export class EditstudyComponent implements OnInit {
     )
   } else {
     alert("No autorizado")
-    this.router.navigate(['portfolioweb']);
+    this.router.navigate(['']);
 
   }
   }
