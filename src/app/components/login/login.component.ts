@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   roles: string[] = [];
   errMsj!: string;
 
-  persona: persona = new persona("","","","","","","","","","","","");
+  persona: persona = new persona("","","","");
 
   constructor(private tokenService: TokenService, private authService: AuthService, private router: Router, public personaService: PersonaService) { }
 

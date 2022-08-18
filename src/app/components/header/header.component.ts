@@ -13,7 +13,7 @@ import { TokenService } from 'src/app/services/token.service';
 export class HeaderComponent implements OnInit {
   isLogged = false;
   
-  persona: persona = new persona("","","","","","","","","","","","");
+  persona: persona = new persona("","","","");
   
   constructor(public personaService: PersonaService, private router:Router, private tokenService: TokenService) { }
   
