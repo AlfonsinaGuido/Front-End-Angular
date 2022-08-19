@@ -7,8 +7,9 @@ import { DatosPersonales } from '../model/datos-personales';
   providedIn: 'root'
 })
 export class DatosPersonalesService {
-  datosURL = 'http://localhost:8080/datosPersonales/';
-
+   // datosURL = 'http://localhost:8080/datosPersonales/';
+   datosURL = 'https://backendyag.herokuapp.com/datosPersonales/';
+  
   constructor(private httpClient : HttpClient) { }
 
   public lista(): Observable<DatosPersonales[]>{

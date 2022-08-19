@@ -7,7 +7,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ContactoService {
-  contactoURL = 'http://localhost:8080/contacto/';
+   // contactoURL = 'http://localhost:8080/contacto/';
+   contactoURL = 'https://backendyag.herokuapp.com/contacto/';
+ 
 
   constructor(private httpClient : HttpClient) { }
 
