@@ -4,7 +4,6 @@
     min-height: 100px;
     font-size: 25px; 
     font-weight: 600;
-    position: sticky;
 }
     
 
@@ -12,4 +11,9 @@
 .nav-link:hover{ color: #eb3a1b;}
 
 .navbar-toggler { font-size: 40px; }
-/* .navbar-toggler:focus { outline: none; } */
+/* .navbar-toggler:focus { outline: none; }
+
+@media (max-width: 576px) { 
+    .navbar { font-size: 15px; }
+    .btn { font-size: 15px !important;}
+} */

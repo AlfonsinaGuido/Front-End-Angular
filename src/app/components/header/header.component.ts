@@ -4,7 +4,6 @@ import { persona } from 'src/app/model/persona.model';
 import { PersonaService } from 'src/app/services/persona.service';
 import { TokenService } from 'src/app/services/token.service';
 
-
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -25,6 +24,13 @@ export class HeaderComponent implements OnInit {
     }else{
       this.isLogged = false;
     }
+    
+  }
+  
+  menuRollback() {
+    if (window.innerWidth < 992) {
+      document.getElementById('closeNav').click()
+    }
   }
 
   onLogOut(): void{
@@ -35,5 +41,6 @@ export class HeaderComponent implements OnInit {
   login(){
     this.router.navigate(['/login']);
   }
+
 
 }

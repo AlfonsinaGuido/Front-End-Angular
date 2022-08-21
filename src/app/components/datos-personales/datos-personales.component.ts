@@ -3,6 +3,7 @@ import { DatosPersonales } from 'src/app/model/datos-personales';
 import { DatosPersonalesService } from 'src/app/services/datos-personales.service';
 import { TokenService } from 'src/app/services/token.service';
 
+
 @Component({
   selector: 'app-datos-personales',
   templateUrl: './datos-personales.component.html',
