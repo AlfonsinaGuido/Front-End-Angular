@@ -1,7 +1,6 @@
 #home {
     background-size: cover;
-    padding-top: 180px;
-    min-height: 800px;
+    min-height: 750px;
     color: #ffffff;
 }
 
@@ -10,7 +9,7 @@
     font-size: 30px;
     color: #ffffff;
     text-shadow: 2px 2px 2px black;
-    font-weight: 600
+    font-weight: 600;
 }
 
 #home-img {
@@ -22,11 +21,10 @@ h1 {font-size: 35px; line-height: 50px; text-shadow: black 1px 0 10px;}
 @media (max-width: 576px) { 
     h1 { font-size: 25px; line-height: normal; }
     #home-p { font-size: 20px; line-height: normal; }
-    #home-img { max-width: 150px; }
+    #home-img { max-width: 150px;
+                margin: 30px 0; }
     #home {
         background-size: cover;
-        padding-top: 100px;
-        padding-bottom: 50px;
-        min-height: 600px;
+        min-height: 500px;
     }
 }

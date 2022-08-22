@@ -7,7 +7,7 @@ body {
 }
 
 section[id] {
-    scroll-margin-top: 80px;
+    scroll-margin-top: 140px;
 }
 
 h2 {font-size: 45px; color: #ac0d0d; box-shadow: 0 6px 6px 0 rgba(120, 0, 0, 0.3); margin-bottom: 30px;}
@@ -15,13 +15,13 @@ h3 {font-size: 30px; margin-bottom: 20px;}
 
 p {
     font-size: 20px;
-    color: #999999;
+    color: darkslategrey;
     line-height: 1.8;
     margin-bottom: 0;
 }
 
 section {
-    padding: 100px 0;
+    padding: 20px 0px 40px;
 }
 
 .bg-dark-blue {background-color: #020129;}
@@ -155,11 +155,11 @@ ion-icon:focus {
         min-width: 60px;
         max-width: 60px;
     }
-    
-    .portfolio-logo {
-        max-width: 120px !important;
-        max-height: 80px !important;
+
+    section[id] {
+        scroll-margin-top: 80px;
     }
+
 }
 
 /* @media (min-width: 576px) and (max-width: 768px) { 
