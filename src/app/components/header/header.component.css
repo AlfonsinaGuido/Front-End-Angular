@@ -5,7 +5,6 @@
     font-size: 25px; 
     font-weight: 600;
 }
-    
 
 .nav-link{ color: #ac0d0d;}
 .nav-link:hover{ color: #eb3a1b;}
@@ -15,5 +14,6 @@
 
 @media (max-width: 576px) { 
     .navbar { font-size: 18px; }
-    .btn { font-size: 15px !important;}
+    .btn { font-size: 15px !important; }
+    p { font-size: 12px; }
 }
