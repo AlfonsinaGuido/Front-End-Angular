@@ -3,7 +3,7 @@
     <div class="mb-3 mt-3">
       <img
         src="{{ persona.logo }}"
-        class="logo-modal mx-auto d-block"
+        class="logo mx-auto d-block"
         alt="logo"
       />
     </div>
@@ -31,12 +31,13 @@
           [(ngModel)]="password" required
         />
       </div>
-      <div class="text-center">
-        <button type="submit" class="btn btn-primary">Submit</button>
+      <div class="d-flex justify-content-between">
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <!-- <a href="http://localhost:4200" class="btn btn-primary">Go back</a> -->
+          <a href="https://alfonsinadvp.web.app" class="btn btn-primary">Go back</a> 
       </div>
-      
     </div>
-    <!-- Quiero agregar la posibilidad de que el usuario pueda registrarse, pero no llego a completarlo a tiempo. Lo dejo pendiente para después de la entrega.
+    <!-- Quiero agregar la posibilidad de que el usuario pueda registrarse, pero no llego a completarlo a tiempo. Lo dejo pendiente para desarrollar en versiones posteriores a la entrega.
     <div>
       <p class="mb-0 text-center">Don't have an account? <a href ="#!" class="text-black-50 fw-bold">Sign Up</a>
     </div> -->

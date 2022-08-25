@@ -1,4 +1,9 @@
-.logo-modal{ 
+.logo{ 
     min-width: 80px;
     max-width: 80px;
+}
+
+@media (max-width: 576px) { 
+    .btn { font-size: 11px; line-height: normal; }
+    h1 { font-size: 20px; line-height: normal; }
 }
