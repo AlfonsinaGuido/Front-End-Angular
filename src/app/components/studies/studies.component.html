@@ -1,58 +1,72 @@
 <section id="studies" class="divider">
-    <div class="container-fluid">
-      <div class="content-center">
-        <h2>My studies</h2>
-        <div class="p-0 bd-highlight">
+  <div class="container-fluid">
+    <div class="content-center">
+      <h2>My studies</h2>
+
+      <div class="p-0 mb-3 bd-highlight">
+        <div class="d-flex justify-content-end">
+          <div class="p-1 bd-highlight">
+            <button type="button" class="edit-buttons" routerLink="/nuevaedu" *ngIf="isLogged">
+              <ion-icon
+                style="background: none; border-radius: 0"
+                name="add-outline"
+              ></ion-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" *ngFor="let Educacion of educacion">
+        <div class="p-0 bd-highlight" *ngIf="isLogged">
           <div class="d-flex justify-content-end">
             <div class="p-1 bd-highlight">
-              <button type="button" class="edit-buttons" routerLink="/nuevaedu" *ngIf="isLogged">
+              <button type="button" class="edit-buttons" routerLink="/editedu/{{Educacion.id}}">
                 <ion-icon
                   style="background: none; border-radius: 0"
-                  name="add-outline"
+                  name="pencil-sharp"
+                ></ion-icon>
+              </button>
+            </div>
+            <div class="p-1 me-3 bd-highlight">
+              <button
+                type="button"
+                class="edit-buttons"
+                (click)="delete(Educacion.id)"
+              >
+                <ion-icon
+                  style="background: none; border-radius: 0"
+                  name="trash-outline"
                 ></ion-icon>
               </button>
             </div>
           </div>
         </div>
 
-        <div class="d-flex justify-content-start" *ngFor="let Educacion of educacion">
-          <div class="p-1 bd-highlight">
-            <div class="p-0 bd-highlight">
-              <br>
-              <img
+        <div class="col-md-4 mt-4">
+          <div class="p-0 bd-highlight"> 
+            <img
                 src="{{Educacion.logoE}}"
                 class="bg-dark-blue logo-brand"
                 alt="logo"
               />
-            </div>
-          </div>
-          <div class="p-1 bd-highlight">
-            <h3><b>{{Educacion.nombreE}}</b></h3>
-            <h4><time>{{Educacion.periodoAniosE}}</time></h4>
-            <h3><i>{{Educacion.descripcionE}}</i></h3>
-          </div>
-  
-          <div class="p-1 bd-highlight" *ngIf="isLogged">
-            <div class="d-flex justify-content-end">
-              <div class="p-1 bd-highlight">
-                <button type="button" class="edit-buttons" routerLink="/editedu/{{Educacion.id}}">
-                  <ion-icon
-                    style="background: none; border-radius: 0"
-                    name="pencil-sharp"
-                  ></ion-icon>
-                </button>
-              </div>
-              <div class="p-1 bd-highlight">
-                <button type="button" class="edit-buttons" (click)="delete(Educacion.id)">
-                  <ion-icon
-                    style="background: none; border-radius: 0"
-                    name="trash-outline"
-                  ></ion-icon>
-                </button>
-              </div>
-            </div>
           </div>
         </div>
+        
+        <div class="col-md-4 mb-5">
+          <div class="p-1 bd-highlight">
+            <h3>
+              <b>{{ Educacion.nombreE }}</b>
+            </h3>
+            <h4>
+              <time>{{ Educacion.periodoAniosE }}</time>
+            </h4>
+            <h3>
+              <i>{{ Educacion.descripcionE }}</i>
+            </h3>
+          </div>
+        </div>
+        
       </div>
     </div>
-  </section>
+  </div>
+</section>

@@ -1,4 +1,6 @@
 h1 { font-size: 30px}
 
 @media (max-width: 576px) { 
-    h1 { font-size: 20px; line-height: normal; }}
+    h1 { font-size: 20px; line-height: normal; }
+    .btn { font-size: 11px; line-height: normal; }
+}

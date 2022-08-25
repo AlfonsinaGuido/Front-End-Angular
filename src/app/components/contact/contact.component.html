@@ -43,7 +43,7 @@
             </div>
             <div class="p-1 bd-highlight">
               <div class="d-flex justify-content-start">
-                <div class="p-1 bd-highlight d-none d-sm-block">
+                <div class="mb-1 pe-1 bd-highlight">
                   <p>
                     <ion-icon
                       name="mail-outline"
@@ -65,7 +65,7 @@
             </div>
             <div class="p-1 bd-highlight">
               <div class="d-flex justify-content-start">
-                <div class="p-1 bd-highlight">
+                <div class="mb-1 pe-1 bd-highlight">
                   <p>
                     <ion-icon
                       name="logo-whatsapp"
@@ -87,7 +87,19 @@
             </div>
             <div class="p-1 bd-highlight">
               <div class="d-flex justify-content-start">
-                <div class="p-1 bd-highlight">
+                <div class="mb-1 pe-1 bd-highlight">
+                  <p>
+                    <ion-icon name="chevron-forward-circle-outline" 
+                    style="
+                    color: rgba(5, 236, 186, 0.945);
+                    font-size: 28px;
+                    cursor: auto;
+                    background: none;
+                    border-radius: 0;
+                    "
+                    *ngIf="Contacto.otroMedio.length > 0"
+                    ></ion-icon>
+                  </p>
                 </div>
                 <div class="p-0 bd-highlight">
                   <p>{{ Contacto.otroMedio }}</p>

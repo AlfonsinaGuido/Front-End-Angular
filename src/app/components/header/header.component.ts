@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit {
   }
   
   menuRollback() {
-    if (window.innerWidth < 992) {
+    if (window.innerWidth < 1400) {
       document.getElementById('closeNav').click()
     }
   }
