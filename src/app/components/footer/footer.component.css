@@ -17,3 +17,7 @@
 .list-inline .list-inline-item {
     padding: 10px 15px;
 }
+
+small {
+    font-size: 12px;
+}

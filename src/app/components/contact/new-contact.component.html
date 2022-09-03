@@ -5,11 +5,11 @@
                 <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
                     <div class="form-group">
                         <label for="email"><b>Email</b></label>
-                        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email" required>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="email@dominio.com" [(ngModel)]="email" required>
                     </div>
                     <div class="form-group">
                         <label for="telefono"><b>Celular</b></label>
-                        <input type="text" class="form-control" id="telefono" name="telefono" [(ngModel)]="telefono" required>
+                        <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="+549 11 5555 5555"[(ngModel)]="telefono" required>
                     </div>
                     <div class="form-group">
                         <label for="otroMedio"><b>Describa otro medio de comunicación (opcional)</b></label>

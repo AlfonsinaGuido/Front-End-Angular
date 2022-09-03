@@ -15,12 +15,13 @@
                         />
                     </div>
                     <div class="form-group">
-                        <label for="logoE"><b>URL del logo (opcional) -> assets/images/<i>nombreImg</i></b></label>
+                        <label for="logoE"><b>Relative Path del logo (opcional)</b></label>
                         <input
                             type="text"
                             class="form-control"
                             id="logoE"
                             name="logoE"
+                            placeholder="assets/images/nombreImg.extensión"
                             [(ngModel)]="educacion.logoE"
                         />
                     </div>
@@ -36,12 +37,13 @@
                         />
                     </div>
                     <div class="form-group">
-                        <label for="periodoAniosE"><b>Periodo de estudio (AAAA-AAAA)</b></label>
+                        <label for="periodoAniosE"><b>Periodo de estudio</b></label>
                         <input
                             type="text"
                             class="form-control"
                             id="periodoAniosE"
                             name="periodoAniosE"
+                            placeholder="(AAAA-AAAA)"
                             [(ngModel)]="educacion.periodoAniosE"
                             required
                         />
