@@ -8,7 +8,7 @@ import { Skills } from '../model/skills';
 })
 export class SkillsService {
 // URL = 'http://localhost:8080/skills/';
-URL = 'https://backendyag.herokuapp.com/skills/';
+URL = 'https://backendap-alfonsinaguido.koyeb.app/skills/';
 
 
 constructor(private httpClient : HttpClient) { }

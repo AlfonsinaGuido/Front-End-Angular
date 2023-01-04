@@ -8,7 +8,7 @@ import { About } from '../model/about';
 })
 export class AboutService {
   //  URL = 'http://localhost:8080/about/';
-   URL = 'https://backendyag.herokuapp.com/about/';
+   URL = 'https://backendap-alfonsinaguido.koyeb.app/about/';
  
 
   constructor(private httpClient : HttpClient) { }

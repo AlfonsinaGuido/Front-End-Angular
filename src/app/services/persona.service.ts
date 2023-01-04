@@ -8,7 +8,7 @@ import { persona } from '../model/persona.model';
 })
 export class PersonaService {
   // URL = 'http://localhost:8080/personas/';
-    URL = 'https://backendyag.herokuapp.com/personas/';
+    URL = 'https://backendap-alfonsinaguido.koyeb.app/personas/';
  
   
   constructor(private http: HttpClient) { }

@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ContactoService {
    // contactoURL = 'http://localhost:8080/contacto/';
-   contactoURL = 'https://backendyag.herokuapp.com/contacto/';
+   contactoURL = 'https://backendap-alfonsinaguido.koyeb.app/contacto/';
  
 
   constructor(private httpClient : HttpClient) { }

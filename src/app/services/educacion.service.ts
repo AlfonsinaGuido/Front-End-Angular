@@ -8,7 +8,7 @@ import { Educacion } from '../model/educacion';
 })
 export class EducacionService {
   // URL = 'http://localhost:8080/educacion/';
-  URL = 'https://backendyag.herokuapp.com/educacion/';
+  URL = 'https://backendap-alfonsinaguido.koyeb.app/educacion/';
 
 
   constructor(private httpClient : HttpClient) { }

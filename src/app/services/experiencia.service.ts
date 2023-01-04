@@ -8,7 +8,7 @@ import { Experiencia } from '../model/experiencia';
 })
 export class SExperienciaService {
   // expURL = 'http://localhost:8080/explab/';
-  expURL = 'https://backendyag.herokuapp.com/explab/';
+  expURL = 'https://backendap-alfonsinaguido.koyeb.app/explab/';
 
 
   constructor(private httpClient: HttpClient) { }

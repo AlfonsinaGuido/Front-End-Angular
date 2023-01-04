@@ -8,7 +8,7 @@ import { Proyectos } from '../model/proyectos';
 })
 export class ProyectosService {
   // URL = 'http://localhost:8080/proyectos/';
-  URL = 'https://backendyag.herokuapp.com/proyectos/';
+  URL = 'https://backendap-alfonsinaguido.koyeb.app/proyectos/';
 
 
   constructor(private httpClient : HttpClient) { }
