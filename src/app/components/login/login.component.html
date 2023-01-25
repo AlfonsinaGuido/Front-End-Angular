@@ -19,7 +19,26 @@
           id="nombreUsuario"
           name="nombreUsuario"
           [(ngModel)]="nombreUsuario" required
+          [formControl]="nombreUsuarioField"
         />
+        <div>
+          <strong
+            *ngIf="nombreUsuarioField.touched && nombreUsuarioField.hasError('required')"
+            >Este campo es requerido</strong
+          >
+        </div>
+        <div>
+          <strong
+            *ngIf="nombreUsuarioField.touched && nombreUsuarioField.hasError('minlength')"
+            >Debe tener mínimo 5 caracteres</strong
+          >
+        </div>
+        <div>
+          <strong
+            *ngIf="nombreUsuarioField.touched && nombreUsuarioField.hasError('maxlength')"
+            >Debe tener máximo 20 caracteres</strong
+          >
+        </div>
       </div>
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
@@ -29,10 +48,29 @@
           id="password"
           name="password"
           [(ngModel)]="password" required
-        />
+          [formControl]="passwordField"
+          />
+          <div>
+            <strong
+              *ngIf="passwordField.touched && passwordField.hasError('required')"
+              >Este campo es requerido</strong
+            >
+          </div>
+          <div>
+            <strong
+              *ngIf="passwordField.touched && passwordField.hasError('minlength')"
+              >Debe tener mínimo 5 caracteres</strong
+            >
+          </div>
+          <div>
+            <strong
+              *ngIf="passwordField.touched && passwordField.hasError('maxlength')"
+              >Debe tener máximo 10 caracteres</strong
+            >
+          </div>
       </div>
       <div class="d-flex justify-content-between">
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary" *ngIf="nombreUsuarioField.valid && passwordField.valid">Submit</button>
           <!-- <a href="http://localhost:4200" class="btn btn-primary">Go back</a> -->
           <a href="https://alfonsinadvp.web.app" class="btn btn-primary">Go back</a> 
       </div>

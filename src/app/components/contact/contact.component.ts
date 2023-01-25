@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { Contacto } from 'src/app/model/contacto';
 import { ContactoService } from 'src/app/services/contacto.service';
 import { TokenService } from 'src/app/services/token.service';
@@ -11,6 +12,13 @@ import { TokenService } from 'src/app/services/token.service';
 export class ContactComponent implements OnInit {
   contacto: Contacto[] = []; 
 
+  nameField = new FormControl('', [Validators.required, Validators.maxLength(30)]);
+  lastnameField = new FormControl('', [Validators.required, Validators.maxLength(30)]);
+  emailField = new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(40)]);
+  companynameField = new FormControl('', [Validators.required, Validators.maxLength(50)]);
+  messageField = new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(300)]);
+
+  
   constructor(private contactoServ: ContactoService, private tokenService: TokenService) { }
   
   isLogged = false;

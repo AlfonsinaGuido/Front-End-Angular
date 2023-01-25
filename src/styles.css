@@ -74,8 +74,8 @@ section {
     outline: none;
     box-shadow: none;
 }
-
-input:invalid {
+/* Estilos que solo se aplican contemplando si el campo requerido (por indicación de required en el html) fue completado o no, pero no verifican demás validaciones actualmente aplicadas */
+/* input:invalid {
     background-color: #ffdddd;
   }
   
@@ -98,7 +98,7 @@ input:required {
   
 input:required:invalid {
     border-color: #C00000;
-  }
+  } */
 
 ion-icon { 
     color: #fafafa;
