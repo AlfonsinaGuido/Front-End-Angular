@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginUsuario } from 'src/app/model/login-usuario';
 import { persona } from 'src/app/model/persona.model';
@@ -23,6 +24,9 @@ export class LoginComponent implements OnInit {
   errMsj!: string;
 
   persona: persona = new persona("","","","");
+
+  nombreUsuarioField = new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]);
+  passwordField = new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]);
 
   constructor(private tokenService: TokenService, private authService: AuthService, private router: Router, public personaService: PersonaService) { }
 

@@ -1,207 +1,298 @@
 <section id="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 topmargin-sm">
-          <h3>
-            Are you interested in my profile?
-            <b>Let's arrange a job interview</b>
-          </h3>
-          <p>
-            You can complete the form or contact me through the following
-            channels:
-          </p>
-          <div class="d-flex justify-content-end mx-1">
-            <div class="p-1 bd-highlight">
-              <button type="button" class="edit-buttons" routerLink="/nuevocontacto" *ngIf="isLogged && contacto.length == 0">
-                <ion-icon
-                  style="background: none; border-radius: 0"
-                  name="add-outline"
-                ></ion-icon>
-              </button>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 topmargin-sm">
+        <h3>
+          Are you interested in my profile?
+          <b>Let's arrange a job interview</b>
+        </h3>
+        <p>
+          You can complete the form or contact me through the following
+          channels:
+        </p>
+        <div class="d-flex justify-content-end mx-1">
+          <div class="p-1 bd-highlight">
+            <button
+              type="button"
+              class="edit-buttons"
+              routerLink="/nuevocontacto"
+              *ngIf="isLogged && contacto.length == 0"
+            >
+              <ion-icon
+                style="background: none; border-radius: 0"
+                name="add-outline"
+              ></ion-icon>
+            </button>
+          </div>
+        </div>
+        <div *ngFor="let Contacto of contacto">
+          <div class="p-1 bd-highlight">
+            <div class="d-flex justify-content-end">
+              <div class="p-1 bd-highlight" *ngIf="isLogged">
+                <button
+                  type="button"
+                  class="edit-buttons"
+                  routerLink="/editcontacto/{{ Contacto.id }}"
+                >
+                  <ion-icon
+                    style="background: none; border-radius: 0"
+                    name="pencil-sharp"
+                  ></ion-icon>
+                </button>
+              </div>
+              <div class="p-1 bd-highlight" *ngIf="isLogged">
+                <button
+                  type="button"
+                  class="edit-buttons"
+                  (click)="delete(Contacto.id)"
+                >
+                  <ion-icon
+                    style="background: none; border-radius: 0"
+                    name="trash-outline"
+                  ></ion-icon>
+                </button>
+              </div>
             </div>
           </div>
-          <div *ngFor="let Contacto of contacto">
-            <div class="p-1 bd-highlight">
-              <div class="d-flex justify-content-end">
-                <div class="p-1 bd-highlight" *ngIf="isLogged">
-                  <button type="button" class="edit-buttons" routerLink="/editcontacto/{{ Contacto.id }}">
-                    <ion-icon
-                      style="background: none; border-radius: 0"
-                      name="pencil-sharp"
-                    ></ion-icon>
-                  </button>
-                </div>
-                <div class="p-1 bd-highlight" *ngIf="isLogged">
-                  <button type="button" class="edit-buttons" (click)="delete(Contacto.id)">
-                    <ion-icon
-                      style="background: none; border-radius: 0"
-                      name="trash-outline"
-                    ></ion-icon>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="p-1 bd-highlight">
-              <div class="d-flex justify-content-start">
-                <div class="mb-1 pe-1 bd-highlight">
-                  <p>
-                    <ion-icon
-                      name="mail-outline"
-                      style="
-                        color: rgb(25, 62, 228);
-                        font-size: 25px;
-                        cursor: auto;
-                        background: none;
-                        border-radius: 0;
-                      "
-                    >
-                    </ion-icon>
-                  </p>
-                </div>
-                <div class="p-0 bd-highlight">
-                  <p>{{ Contacto.email }}</p>
-                </div>
-              </div>
-            </div>
-            <div class="p-1 bd-highlight">
-              <div class="d-flex justify-content-start">
-                <div class="mb-1 pe-1 bd-highlight">
-                  <p>
-                    <ion-icon
-                      name="logo-whatsapp"
-                      style="
-                        color: rgb(119, 233, 25);
-                        font-size: 25px;
-                        cursor: auto;
-                        background: none;
-                        border-radius: 0;
-                      "
-                    >
-                    </ion-icon>
-                  </p>
-                </div>
-                <div class="p-0 bd-highlight">
-                  <p>{{ Contacto.telefono }}</p>
-                </div>
-              </div>
-            </div>
-            <div class="p-1 bd-highlight">
-              <div class="d-flex justify-content-start">
-                <div class="mb-1 pe-1 bd-highlight">
-                  <p>
-                    <ion-icon name="chevron-forward-circle-outline" 
+          <div class="p-1 bd-highlight">
+            <div class="d-flex justify-content-start">
+              <div class="mb-1 pe-1 bd-highlight">
+                <p>
+                  <ion-icon
+                    name="mail-outline"
                     style="
-                    color: rgba(5, 236, 186, 0.945);
-                    font-size: 28px;
-                    cursor: auto;
-                    background: none;
-                    border-radius: 0;
+                      color: rgb(25, 62, 228);
+                      font-size: 25px;
+                      cursor: auto;
+                      background: none;
+                      border-radius: 0;
+                    "
+                  >
+                  </ion-icon>
+                </p>
+              </div>
+              <div class="p-0 bd-highlight">
+                <p>{{ Contacto.email }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-1 bd-highlight">
+            <div class="d-flex justify-content-start">
+              <div class="mb-1 pe-1 bd-highlight">
+                <p>
+                  <ion-icon
+                    name="logo-whatsapp"
+                    style="
+                      color: rgb(119, 233, 25);
+                      font-size: 25px;
+                      cursor: auto;
+                      background: none;
+                      border-radius: 0;
+                    "
+                  >
+                  </ion-icon>
+                </p>
+              </div>
+              <div class="p-0 bd-highlight">
+                <p>{{ Contacto.telefono }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-1 bd-highlight">
+            <div class="d-flex justify-content-start">
+              <div class="mb-1 pe-1 bd-highlight">
+                <p>
+                  <ion-icon
+                    name="chevron-forward-circle-outline"
+                    style="
+                      color: rgba(5, 236, 186, 0.945);
+                      font-size: 28px;
+                      cursor: auto;
+                      background: none;
+                      border-radius: 0;
                     "
                     *ngIf="Contacto.otroMedio.length > 0"
-                    ></ion-icon>
-                  </p>
-                </div>
-                <div class="p-0 bd-highlight">
-                  <p>{{ Contacto.otroMedio }}</p>
-                </div>
+                  ></ion-icon>
+                </p>
+              </div>
+              <div class="p-0 bd-highlight">
+                <p>{{ Contacto.otroMedio }}</p>
               </div>
             </div>
           </div>
-          
         </div>
-        <div class="col-md-6 topmargin-sm">
-          <form ngNoForm action="https://formsubmit.co/yesicaguidounla@hotmail.com" method="POST">
-            <div class="col-md-12">
-              <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  name="name"
-                  placeholder="Name"
-                  required
-                />
+      </div>
+      <div class="col-md-6 topmargin-sm">
+        <form
+          ngNoForm
+          action="https://formsubmit.co/yesicaguidounla@hotmail.com"
+          method="POST"
+        >
+          <div class="col-md-12">
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                name="name"
+                placeholder="Name"
+                required
+                [formControl]="nameField"
+              />
+              <div>
+                <strong
+                  *ngIf="nameField.touched && nameField.hasError('required')"
+                  >Este campo es requerido</strong
+                >
+              </div>
+              <div>
+                <strong
+                  *ngIf="nameField.touched && nameField.hasError('maxlength')"
+                  >Debe tener máximo 30 caracteres</strong
+                >
               </div>
             </div>
-            <div class="col-md-12">
-              <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  name="lastname"
-                  placeholder="Last name"
-                  required
-                />
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                name="lastname"
+                placeholder="Last name"
+                required
+                [formControl]="lastnameField"
+              />
+              <div>
+                <strong
+                  *ngIf="
+                    lastnameField.touched && lastnameField.hasError('required')
+                  "
+                  >Este campo es requerido</strong
+                >
+              </div>
+              <div>
+                <strong
+                  *ngIf="
+                    lastnameField.touched && lastnameField.hasError('maxlength')
+                  "
+                  >Debe tener máximo 30 caracteres</strong
+                >
               </div>
             </div>
-            <div class="col-md-12">
-              <div class="form-group">
-                <input
-                  type="email"
-                  class="form-control"
-                  name="email"
-                  placeholder="Email"
-                  required
-                />
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <input
+                type="email"
+                class="form-control"
+                name="email"
+                placeholder="Email"
+                required
+                [formControl]="emailField"
+              />
+              <div>
+                <strong
+                  *ngIf="emailField.touched && emailField.hasError('required')"
+                  >Este campo es requerido</strong
+                >
+              </div>
+              <div>
+                <strong
+                  *ngIf="emailField.touched && emailField.hasError('minlength')"
+                  >Debe tener mínimo 10 caracteres</strong
+                >
+              </div>
+              <div>
+                <strong
+                  *ngIf="emailField.touched && emailField.hasError('maxlength')"
+                  >Debe tener máximo 40 caracteres</strong
+                >
               </div>
             </div>
-            <div class="col-md-12">
-              <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  name="companyname"
-                  placeholder="Company name"
-                  required
-                />
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                name="companyname"
+                placeholder="Company name"
+                required
+                [formControl]="companynameField"
+              />
+              <div>
+                <strong
+                  *ngIf="
+                    companynameField.touched &&
+                    companynameField.hasError('required')
+                  "
+                  >Este campo es requerido</strong
+                >
+              </div>
+              <div>
+                <strong
+                  *ngIf="
+                    companynameField.touched &&
+                    companynameField.hasError('maxlength')
+                  "
+                  >Debe tener máximo 50 caracteres</strong
+                >
               </div>
             </div>
-            <div class="col-md-12">
-              <div class="form-group">
-                <input
-                  type="tel"
-                  class="form-control"
-                  name="phone"
-                  placeholder="Phone number (optional)"
-                />
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <input
+                type="tel"
+                class="form-control"
+                name="phone"
+                placeholder="Phone number (optional)"
+              />
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <textarea
+                class="form-control"
+                name="message"
+                placeholder="Write your message"
+                rows="3"
+                required
+                [formControl]="messageField"
+              ></textarea>
+              <div>
+                <strong
+                  *ngIf="
+                    messageField.touched && messageField.hasError('required')
+                  "
+                  >Este campo es requerido</strong
+                >
+              </div>
+              <div>
+                <strong
+                  *ngIf="
+                    messageField.touched && messageField.hasError('minlength')
+                  "
+                  >Debe tener mínimo 10 caracteres</strong
+                >
+              </div>
+              <div>
+                <strong
+                  *ngIf="
+                    messageField.touched && messageField.hasError('maxlength')
+                  "
+                  >Debe tener máximo 300 caracteres</strong
+                >
               </div>
             </div>
-            <div class="col-md-12">
-              <div class="form-group">
-                <textarea
-                  class="form-control"
-                  name="message"
-                  placeholder="Write your message"
-                  rows="3"
-                  required
-                ></textarea>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <input type="hidden" name="_captcha" value="false" />
-              <!-- <input
+          </div>
+          <div class="col-md-12">
+            <input type="hidden" name="_captcha" value="false" />
+            <!-- <input
                 type="hidden"
                 name="_next"
                 value="http://localhost:4200/messageSent"
               /> -->
-<<<<<<< Updated upstream
-              <input
-                type="hidden"
-                name="_next"
-                value="https://alfonsinadvp.web.app/messageSent"
-              />
-            </div>
-            <div class="col-md-12">
-              <button type="submit" class="btn btn-dark full-width">
-                Send
-                <ion-icon
-                  style="background: none; border-radius: 0"
-                  name="paper-plane-outline"
-                ></ion-icon>
-              </button>
-            </div>
-          </form>
-        </div>
-=======
             <input
               type="hidden"
               name="_next"
@@ -228,8 +319,7 @@
             </button>
           </div>
         </form>
->>>>>>> Stashed changes
       </div>
     </div>
-    
+  </div>
 </section>
