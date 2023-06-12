@@ -303,12 +303,12 @@
             <button
               type="submit"
               class="btn btn-dark full-width"
-              *ngIf="
-                nameField.valid &&
-                lastnameField.valid &&
-                emailField.valid &&
-                companynameField.valid &&
-                messageField.valid
+              [disabled]="
+                !nameField.valid ||
+                !lastnameField.valid ||
+                !emailField.valid ||
+                !companynameField.valid ||
+                !messageField.valid
               "
             >
               Send
