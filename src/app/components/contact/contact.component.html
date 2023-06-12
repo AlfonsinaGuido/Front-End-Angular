@@ -183,6 +183,7 @@
                 name="_next"
                 value="http://localhost:4200/messageSent"
               /> -->
+<<<<<<< Updated upstream
               <input
                 type="hidden"
                 name="_next"
@@ -200,6 +201,34 @@
             </div>
           </form>
         </div>
+=======
+            <input
+              type="hidden"
+              name="_next"
+              value="https://alfonsinadvp.web.app/messageSent"
+            />
+          </div>
+          <div class="col-md-12">
+            <button
+              type="submit"
+              class="btn btn-dark full-width"
+              [disabled]="
+                !nameField.valid ||
+                !lastnameField.valid ||
+                !emailField.valid ||
+                !companynameField.valid ||
+                !messageField.valid
+              "
+            >
+              Send
+              <ion-icon
+                style="background: none; border-radius: 0"
+                name="paper-plane-outline"
+              ></ion-icon>
+            </button>
+          </div>
+        </form>
+>>>>>>> Stashed changes
       </div>
     </div>
     

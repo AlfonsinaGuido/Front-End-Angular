@@ -32,9 +32,13 @@
         />
       </div>
       <div class="d-flex justify-content-between">
+<<<<<<< Updated upstream
           <button type="submit" class="btn btn-primary">Submit</button>
+=======
+>>>>>>> Stashed changes
           <!-- <a href="http://localhost:4200" class="btn btn-primary">Go back</a> -->
-          <a href="https://alfonsinadvp.web.app" class="btn btn-primary">Go back</a> 
+          <a href="https://alfonsinadvp.web.app" class="btn btn-primary">Go back</a>
+          <button type="submit" class="btn btn-primary" *ngIf="nombreUsuarioField.valid && passwordField.valid">Submit</button>
       </div>
     </div>
     <!-- Quiero agregar la posibilidad de que el usuario pueda registrarse, pero no llego a completarlo a tiempo. Lo dejo pendiente para desarrollar en versiones posteriores a la entrega.
