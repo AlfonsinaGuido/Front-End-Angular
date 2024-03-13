@@ -109,7 +109,7 @@ ion-icon {
 ion-icon:hover,
 ion-icon:focus {
     cursor: pointer;
-    background: yellow;
+    background: rgb(250, 221, 154);
     border-radius: 50%;
 }
 
