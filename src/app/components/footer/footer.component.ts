@@ -15,6 +15,8 @@ export class FooterComponent implements OnInit {
     
   persona: persona = new persona("","","","");
   
+  public year: Number = new Date().getFullYear();
+  
   constructor(public personaService: PersonaService, private tokenService: TokenService) { }
   
   ngOnInit(): void {
