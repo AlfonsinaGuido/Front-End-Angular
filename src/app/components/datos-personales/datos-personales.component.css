@@ -66,6 +66,15 @@ h1 {font-size: 35px; line-height: 50px; text-shadow: black 1px 0 10px;}
     margin-top: 32px;
 }
 
+.loading-interaction-lock {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    cursor: wait;
+    touch-action: none;
+    background: transparent;
+}
+
 @keyframes skeleton-loading {
     0% {
         background-position: 100% 50%;
