@@ -6,6 +6,12 @@ body {
     overflow: scroll !important;
 }
 
+html.loading-scroll-lock,
+body.loading-scroll-lock {
+    overflow: hidden !important;
+    overscroll-behavior: none;
+}
+
 section[id] {
     scroll-margin-top: 150px;
 }

@@ -1,6 +1,6 @@
 <section id="about" class="divider">
   <div class="container-fluid">
-    <div class="content-center">
+    <div class="content-center" [attr.aria-busy]="isLoading">
       <h2>Who I am?</h2>
       <div class="d-flex justify-content-end">
         <div class="p-1 bd-highlight">
@@ -8,7 +8,7 @@
             type="button"
             class="edit-buttons"
             routerLink="/nuevoabout"
-            *ngIf="isLogged && about.length == 0"
+            *ngIf="isLogged && !isLoading && about.length == 0"
           >
             <ion-icon
               style="background: none; border-radius: 0"
@@ -16,6 +16,12 @@
             ></ion-icon>
           </button>
         </div>
+      </div>
+      <div class="about-skeleton-content" *ngIf="isLoading" aria-label="Cargando informacion sobre mi">
+        <div class="about-skeleton about-skeleton-line about-skeleton-line-sm"></div>
+        <div class="about-skeleton about-skeleton-line about-skeleton-line-lg"></div>
+        <div class="about-skeleton about-skeleton-line about-skeleton-line-md"></div>
+        <div class="about-skeleton about-skeleton-line about-skeleton-line-xl"></div>
       </div>
       <div *ngFor="let About of about">
         <div class="d-flex justify-content-end">

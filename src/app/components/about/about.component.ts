@@ -10,8 +10,7 @@ import { TokenService } from 'src/app/services/token.service';
 })
 export class AboutComponent implements OnInit {
   about: About[] = []; 
-
- 
+  isLoading = true;
 
 constructor(private aboutServ: AboutService, private tokenService: TokenService){ }
 isLogged = false;
@@ -30,7 +29,11 @@ isLogged = false;
   };
   cargarAbout():void{
     this.aboutServ.lista().subscribe(
-      data => {this.about=data;})
+      data => {
+        this.about=data;
+        this.isLoading = false;
+      }
+    )
   }
   delete(id?: number) {
     if (confirm("Desea eliminar?") == true) {

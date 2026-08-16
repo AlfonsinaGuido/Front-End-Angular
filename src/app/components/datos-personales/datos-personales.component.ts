@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { DatosPersonales } from 'src/app/model/datos-personales';
 import { DatosPersonalesService } from 'src/app/services/datos-personales.service';
 import { TokenService } from 'src/app/services/token.service';
@@ -11,8 +12,14 @@ import { TokenService } from 'src/app/services/token.service';
 })
 export class DatosPersonalesComponent implements OnInit {
   datos: DatosPersonales[] = [];
+  isLoading = true;
+  private scrollBloqueado = false;
 
-  constructor(private DatosPersonales: DatosPersonalesService, private tokenService: TokenService) { }
+  constructor(
+    private DatosPersonales: DatosPersonalesService,
+    private tokenService: TokenService,
+    @Inject(DOCUMENT) private document: Document
+  ) { }
 
   isLogged = false;
   
@@ -28,8 +35,47 @@ export class DatosPersonalesComponent implements OnInit {
   }
 
   cargarDatosPersonales(): void {
-    this.DatosPersonales.lista().subscribe(data => { this.datos = data });
+    this.isLoading = true;
+    this.bloquearScrollGlobal();
+    this.DatosPersonales.lista().subscribe(
+      data => {
+        this.datos = data;
+        this.isLoading = false;
+        this.desbloquearScrollGlobal();
+      },
+      err => {
+        console.error('No se pudieron cargar los datos', err);
+      }
+    );
   
+  }
+
+  private bloquearScrollGlobal(): void {
+    if (this.scrollBloqueado) {
+      return;
+    }
+
+    this.document.body.classList.add('loading-scroll-lock');
+    this.document.documentElement.classList.add('loading-scroll-lock');
+    this.scrollBloqueado = true;
+  }
+
+  private desbloquearScrollGlobal(): void {
+    if (!this.scrollBloqueado) {
+      return;
+    }
+
+    this.document.body.classList.remove('loading-scroll-lock');
+    this.document.documentElement.classList.remove('loading-scroll-lock');
+    this.scrollBloqueado = false;
+  }
+
+  @HostListener('document:keydown', ['$event'])
+  bloquearTecladoMientrasCarga(event: KeyboardEvent): void {
+    if (this.isLoading) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
   }
 
   delete(id?: number) {
@@ -48,4 +94,3 @@ export class DatosPersonalesComponent implements OnInit {
     }
   }
 }
-

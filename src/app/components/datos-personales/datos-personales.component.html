@@ -2,8 +2,9 @@
   id="home"
   class="divider"
   style="background-image: url('assets/images/home.jpeg')"
+  [attr.aria-busy]="isLoading"
 >
-  <!-- Única imagen que llamo desde el Front ya que es parte de la estructura de la section y si por alguna razón el backend no se carga correctamente, esta sección se rompe. -->
+  <!-- Llamo esta imagen desde el Front ya que es parte de la estructura de la section y si por alguna razón el backend no se carga correctamente, esta sección se rompe. -->
   <div class="container">
     <div class="p-0 bd-highlight">
       <div class="d-flex justify-content-end">
@@ -12,7 +13,7 @@
             type="button"
             class="edit-buttons"
             routerLink="/nuevosdatos"
-            *ngIf="isLogged && datos.length == 0"
+            *ngIf="isLogged && !isLoading && datos.length == 0"
           >
             <ion-icon
               style="background: none; border-radius: 0"
@@ -21,6 +22,15 @@
           </button>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="container" *ngIf="isLoading">
+    <div class="content-center skeleton-content" aria-label="Cargando datos personales">
+      <div class="skeleton skeleton-title"></div>
+      <div class="skeleton skeleton-avatar"></div>
+      <div class="skeleton skeleton-text skeleton-text-md"></div>
+      <div class="skeleton skeleton-text skeleton-text-lg"></div>
+      <div class="skeleton skeleton-button"></div>
     </div>
   </div>
   <div class="container" *ngFor="let DatosPersonales of datos">
@@ -73,4 +83,9 @@
       ></a>
     </div>
   </div>
+  <div
+    class="loading-interaction-lock"
+    *ngIf="isLoading"
+    aria-hidden="true"
+  ></div>
 </section>

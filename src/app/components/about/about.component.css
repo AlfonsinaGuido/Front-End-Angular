@@ -1,6 +1,56 @@
 h2 { font-size: 30px; line-height: normal; }
 
+.about-skeleton-content {
+    padding: 12px 0 6px;
+}
+
+.about-skeleton {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 4px;
+    background: linear-gradient(90deg, rgba(47, 83, 152, 0.12) 25%, rgba(47, 83, 152, 0.28) 37%, rgba(47, 83, 152, 0.12) 63%);
+    background-size: 400% 100%;
+    animation: about-skeleton-loading 1.4s ease infinite;
+}
+
+.about-skeleton-line {
+    height: 28px;
+    margin-bottom: 14px;
+}
+
+.about-skeleton-line-xl {
+    width: min(800px, 96%);
+}
+
+.about-skeleton-line-lg {
+    width: min(760px, 92%);
+}
+
+.about-skeleton-line-md {
+    width: min(800px, 85%);
+}
+
+.about-skeleton-line-sm {
+    width: min(620px, 80%);
+}
+
+@keyframes about-skeleton-loading {
+    0% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}
+
 @media (max-width: 576px) { 
     h2 { font-size: 25px; line-height: normal; }
     p { font-size: 17px; line-height: normal; }
+
+    .about-skeleton-line {
+        height: 22px;
+        margin-bottom: 12px;
+    }
 }
