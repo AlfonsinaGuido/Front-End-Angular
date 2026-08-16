@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { finalize } from 'rxjs';
 import { DatosPersonales } from 'src/app/model/datos-personales';
 import { DatosPersonalesService } from 'src/app/services/datos-personales.service';
 import { TokenService } from 'src/app/services/token.service';
@@ -11,6 +12,7 @@ import { TokenService } from 'src/app/services/token.service';
 })
 export class DatosPersonalesComponent implements OnInit {
   datos: DatosPersonales[] = [];
+  isLoading = true;
 
   constructor(private DatosPersonales: DatosPersonalesService, private tokenService: TokenService) { }
 
@@ -28,7 +30,10 @@ export class DatosPersonalesComponent implements OnInit {
   }
 
   cargarDatosPersonales(): void {
-    this.DatosPersonales.lista().subscribe(data => { this.datos = data });
+    this.isLoading = true;
+    this.DatosPersonales.lista()
+      .pipe(finalize(() => this.isLoading = false))
+      .subscribe(data => { this.datos = data });
   
   }
 

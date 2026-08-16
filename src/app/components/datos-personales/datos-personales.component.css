@@ -19,6 +19,63 @@
 }
 
 h1 {font-size: 35px; line-height: 50px; text-shadow: black 1px 0 10px;}
+
+.skeleton-content {
+    padding-top: 40px;
+}
+
+.skeleton {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 4px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.45) 37%, rgba(255, 255, 255, 0.2) 63%);
+    background-size: 400% 100%;
+    animation: skeleton-loading 1.4s ease infinite;
+}
+
+.skeleton-title {
+    width: min(420px, 85%);
+    height: 50px;
+}
+
+.skeleton-avatar {
+    width: 200px;
+    height: 200px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 4%;
+}
+
+.skeleton-text {
+    height: 50px;
+    margin-bottom: 32px;
+}
+
+.skeleton-text-lg {
+    width: min(430px, 75%);
+}
+
+.skeleton-text-md {
+    width: min(260px, 65%);
+}
+
+.skeleton-button {
+    width: 170px;
+    height: 48px;
+    margin-top: 32px;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}
+
 @media (max-width: 576px) { 
     h1 { font-size: 25px; line-height: normal; }
     #home-p { font-size: 20px; line-height: normal; }
@@ -27,5 +84,30 @@ h1 {font-size: 35px; line-height: 50px; text-shadow: black 1px 0 10px;}
     #home {
         background-size: cover;
         min-height: 500px;
+    }
+
+    .skeleton-content {
+        padding-top: 30px;
+    }
+
+    .skeleton-title {
+        height: 32px;
+    }
+
+    .skeleton-avatar {
+        width: 150px;
+        height: 150px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .skeleton-text {
+        height: 24px;
+        margin-bottom: 14px;
+    }
+
+    .skeleton-button {
+        width: 145px;
+        height: 42px;
     }
 }
