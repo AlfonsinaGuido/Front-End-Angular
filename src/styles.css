@@ -10,7 +10,7 @@ section[id] {
     scroll-margin-top: 150px;
 }
 
-h2 {font-size: 45px; color: #ac0d0d; box-shadow: 0 6px 6px 0 rgba(120, 0, 0, 0.3); margin-bottom: 30px;}
+h2 {font-size: 45px; color: #2f5398; margin-bottom: 30px;}
 h3 {font-size: 30px; margin-bottom: 20px;}
 
 p {
@@ -25,7 +25,11 @@ section {
 }
 
 .bg-dark-blue {background-color: #020129;}
-.bg-light-blue {background-color: #aee8f7 !important;}
+
+.border-light-purple {
+    border-top: 2px solid #5c92ee; 
+    background-color: #ffffff !important;
+}
 
 .topmargin-xs {margin-top: 15px !important;}
 .topmargin-sm {margin-top: 30px !important;}
@@ -42,8 +46,12 @@ section {
 
 .btn-light {
     background-color: #ffffff;
-    color: #1a1a1a;
+    color: #000000;
     border: 2px solid #ffffff;
+}
+
+.btn-light:hover {
+    background-color: #5c92ee !important;
 }
 
 .btn-dark {
@@ -104,13 +112,6 @@ ion-icon {
     color: #fafafa;
     vertical-align: sub;
     --ionicon-stroke-width: 45px;
-}
-
-ion-icon:hover,
-ion-icon:focus {
-    cursor: pointer;
-    background: rgb(250, 221, 154);
-    border-radius: 50%;
 }
 
 .edit-buttons {

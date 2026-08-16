@@ -1,17 +1,17 @@
 #footer {
     padding: 80px 0;
     text-align: center;
-    color: #eb671b;
+    color: #5c92ee;
 }
 
 #footer a {
-    color: #eb671b;
+    color: #5c92ee;
     font-size: 18px;
     text-decoration: none;
 }
 
 #footer a:hover {
-    color: #fc0f0f;
+    color: #2f5398;
 }
 
 .list-inline .list-inline-item {

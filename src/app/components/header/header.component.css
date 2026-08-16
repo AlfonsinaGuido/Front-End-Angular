@@ -1,16 +1,15 @@
-.navbar{ 
-    background-color: #aee8f7;
-    box-shadow: 0 6px 6px 0 rgba(120, 0, 0, 0.3);
+.navbar { 
+    box-shadow: 0 6px 6px 0 rgba(92, 146, 238, 0.3);
     min-height: 100px;
     font-size: 25px; 
     font-weight: 600;
 }
 
-.nav-link{ color: #ac0d0d;}
-.nav-link:hover{ color: #eb3a1b;}
+.nav-link{ color: #5c92ee;}
+.nav-link:hover{ color: #2f5398;}
 
 .navbar-toggler { font-size: 40px; }
-/* .navbar-toggler:focus { outline: none; } */
+.navbar-toggler:focus { box-shadow: none; }
 
 @media (max-width: 576px) { 
     .navbar { font-size: 18px; }

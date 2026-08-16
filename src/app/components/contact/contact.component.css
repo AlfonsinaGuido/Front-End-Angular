@@ -1,5 +1,15 @@
 h3 { font-size: 28px; line-height: normal; }
 
+a { 
+    color: #2f4f4f; 
+    text-decoration: none;
+}
+
+a:hover { 
+    color: #2f4f4f; 
+    text-decoration: underline;
+}
+
 @media (max-width: 576px) { 
     h3 { font-size: 20px; line-height: normal; }
     p { font-size: 17px; line-height: normal; }
