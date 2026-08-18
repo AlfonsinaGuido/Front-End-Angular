@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Experiencia } from 'src/app/model/experiencia';
 import { SExperienciaService } from 'src/app/services/experiencia.service';
 import { TokenService } from 'src/app/services/token.service';
+import { sortByMostRecentPeriod } from 'src/app/utils/period-sort';
 
 @Component({
   selector: 'app-experience',
@@ -25,7 +26,9 @@ export class ExperienceComponent implements OnInit {
   }
 
   cargarExperiencia(): void {
-    this.sExperiencia.lista().subscribe(data => { this.expe = data; })
+    this.sExperiencia.lista().subscribe(data => {
+      this.expe = sortByMostRecentPeriod(data, experiencia => experiencia.periodoAniosExp);
+    })
   }
 
   delete(id?: number) {

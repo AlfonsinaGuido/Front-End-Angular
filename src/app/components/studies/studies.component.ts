@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Educacion } from 'src/app/model/educacion';
 import { EducacionService } from 'src/app/services/educacion.service';
 import { TokenService } from 'src/app/services/token.service';
+import { sortByMostRecentPeriod } from 'src/app/utils/period-sort';
 
 @Component({
   selector: 'app-studies',
@@ -28,7 +29,7 @@ export class StudiesComponent implements OnInit {
   cargarEducacion(): void{
     this.educacionS.lista().subscribe(
       data =>{
-        this.educacion = data;
+        this.educacion = sortByMostRecentPeriod(data, educacion => educacion.periodoAniosE);
       }
     )
   }
